@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Soukaina Naimi",
+    "email": "soukaina@gmail.com",
+    "phone": "0617573133",
+    "gender": "female",
+    "country": "Maroc",
+    "createdAt": "2025-11-21T19:20:56.330Z",
+    "id": 1763752856637
+  },
+  {
+    "name": "Mohammed Naimi",
+    "email": "Mohammed@gmail.com",
+    "phone": "0616547982",
+    "gender": "male",
+    "country": "Maroc",
+    "createdAt": "2025-11-21T19:47:26.694Z",
+    "id": 1763754446959
+  }
+]

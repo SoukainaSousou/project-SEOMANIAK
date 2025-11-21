@@ -1,0 +1,356 @@
+/* ---- BASE ---- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: #F4F6FB;          /* gris très clair tirant vers le bleu */
+  color: #1F2933;               /* gris foncé lisible */
+}
+
+/* ---- LAYOUT ---- */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* conteneur principal à droite du sidebar */
+.main-modern {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* pour éviter les scrolls horizontaux inutiles */
+}
+
+/* zone où les pages (Dashboard, Users, etc.) s'affichent */
+.page-content {
+  flex: 1;
+  padding: 16px 20px;   /* un peu de marge mais pas énorme */
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 230px;
+  background: #0F6CBD;          /* bleu principal */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #0B5A9E;
+  color: #FFFFFF;
+}
+
+.sidebar h2 {
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sidebar a {
+  color: #E5F0FF;               /* bleu très clair */
+  text-decoration: none;
+  transition: 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar a:hover {
+  color: #FFFFFF;
+}
+
+/* ---- HEADER ---- */
+.header {
+  background: #FFFFFF;
+  padding: 20px 30px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0F6CBD;               /* bleu */
+  border-bottom: 2px solid #E2E8F0;
+}
+
+/* ---- FOOTER ---- */
+.footer {
+  background: #0F6CBD;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px;
+  border-top: 2px solid #0B5A9E;
+  font-size: 14px;
+}
+
+/* ---- PAGE UTILISATEURS ---- */
+.users-page {
+  width: 100%;
+  padding-top: 10px;       /* un peu d’espace sous le header */
+}
+
+/* Titre */
+.users-header-box {
+  margin-bottom: 20px;
+}
+
+.users-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0F6CBD;
+}
+
+/* Section formulaire */
+.users-form-section {
+  margin-bottom: 25px;
+}
+
+/* ---- USER FORM ---- */
+.user-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}
+
+.user-form input,
+.user-form select {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #CBD5F5;   /* gris-bleu clair */
+  background: #F7FAFF;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.user-form input:focus,
+.user-form select:focus {
+  outline: none;
+  border-color: #0F6CBD;
+  box-shadow: 0 0 4px rgba(15, 108, 189, 0.3);
+}
+
+.user-form button {
+  grid-column: 1 / -1;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 8px;
+  background: #0F6CBD;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.user-form button:hover {
+  background: #0B5A9E;
+}
+
+/* ---- USER CARDS ---- */
+.user-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+.user-card {
+  background: #FFFFFF;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border: 1px solid #E2E8F0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.user-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #0F6CBD;
+}
+
+.user-card p {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #1F2933;
+}
+
+.user-card button {
+  margin-top: 15px;
+  padding: 12px;
+  font-size: 15px;
+  background: #FF6B6B;
+  border-radius: 10px;
+  transition: background 0.3s;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.user-card button:hover {
+  background: #E54E4E;
+}
+
+/* Texte vide lorsqu'il n'y a pas d'utilisateurs */
+.empty-text {
+  font-size: 15px;
+  color: #6B7280;
+}
+
+/* TITLE (générique) */
+.title {
+  color: #0F6CBD;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* STATS GRID */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* STAT CARD */
+.stat-card {
+  background: #FFFFFF;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+  transition: 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+}
+
+.stat-card h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #4A5568;
+  font-weight: 600;
+}
+
+.stat-card .number {
+  font-size: 32px;
+  margin: 10px 0 5px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.trend {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.trend.positive {
+  color: #16A34A;
+}
+
+.trend.negative {
+  color: #DC2626;
+}
+
+/* GRAPH CARD */
+.graph-card {
+  background: #FFFFFF;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+}
+
+.graph-placeholder {
+  height: 200px;
+  background: #EEF2FF;          /* bleu très clair */
+  border-radius: 12px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4C6FFF;
+  font-weight: 600;
+  font-size: 18px;
+}
+/* Conteneur des deux graphes côte à côte */
+.graphs-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 25px;
+  flex-wrap: wrap;          /* pour passer en colonne sur petit écran */
+}
+
+/* Chaque bloc de graphique */
+.graph-section {
+  flex: 1;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.07);
+}
+
+.graph-section h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #0F6CBD;
+  font-weight: 600;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  color: #0F6CBD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: #BFDBFE; /* bleu clair */
+}
