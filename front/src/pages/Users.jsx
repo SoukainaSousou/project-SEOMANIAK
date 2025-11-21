@@ -20,32 +20,22 @@ export default function Users() {
   }, []);
 
   return (
-    <div className="users-page">
-      <div className="users-header-box">
-        <h1 className="users-title">Gestion des utilisateurs</h1>
-        <Link to="/add-user">
-          <button
-            style={{
-              padding: "10px 15px",
-              background: "#0F6CBD",
-              color: "#fff",
-              borderRadius: "8px",
-              border: "none",
-              cursor: "pointer",
-              marginTop: "10px",
-            }}
-          >
-            Ajouter un utilisateur
-          </button>
+    <div className="container my-5">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h1 className="text-primary">Gestion des utilisateurs</h1>
+        <Link to="/add-user" className="btn btn-primary">
+          <i className="fas fa-user-plus me-2"></i> Ajouter un utilisateur
         </Link>
       </div>
 
-      <div className="user-cards-container">
+      <div className="row">
         {users.length === 0 ? (
-          <p className="empty-text">Aucun utilisateur pour le moment.</p>
+          <p className="text-muted">Aucun utilisateur pour le moment.</p>
         ) : (
-          users.map(user => (
-            <UserCard key={user.id} user={user} refreshUsers={refreshUsers} />
+          users.map((user) => (
+            <div key={user.id} className="col-md-4 mb-4">
+              <UserCard user={user} refreshUsers={refreshUsers} />
+            </div>
           ))
         )}
       </div>

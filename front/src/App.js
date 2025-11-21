@@ -9,6 +9,9 @@ import EditUser  from "./pages/EditUser";
 import Users from "./pages/Users";
 import axios from "axios";
 import "./styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 export default function App() {
   const [users, setUsers] = useState([]);
