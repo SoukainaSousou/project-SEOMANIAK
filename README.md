@@ -1,82 +1,95 @@
-Titre du projet : Dashboard Utilisateur – React + Node.js
+# 📊 Dashboard Utilisateur – React + Node.js
 
-# 📍 Stack utilisée :
+## 🔗 Lien GitHub
 
-Frontend : React (React Router v6, Axios)
+Lien du projet :  
+https://github.com/SoukainaSousou/project-SEOMANIAK
 
-Backend : Node.js, Express
 
-Base de données : Fichier JSON (users.json)
+## 📍 Stack utilisée
 
-Style : CSS custom
+- **Frontend :** React (React Router v6, Axios)
+- **Backend :** Node.js, Express
+- **Base de données :** Fichier JSON (`users.json`)
+- **Style :** Bootstrap 5 + CSS personnalisé
 
-# Description du projet
+---
 
-Cette application permet de gérer des utilisateurs :
+## 📝 Description du projet
 
-Ajouter un utilisateur
+Cette application est un **mini dashboard de gestion des utilisateurs (CRUD)**.  
+Elle permet de :
 
-Supprimer un utilisateur
+- ➕ Ajouter un utilisateur  
+- ✏️ Modifier un utilisateur  
+- 🗑️ Supprimer un utilisateur  
+- 📄 Afficher la liste des utilisateurs  
+- 📊 Visualiser des statistiques simples sur le dashboard
 
-Modifier un utilisateur
+Le projet est **séparé en deux parties** :
 
-Afficher la liste des utilisateurs
+- **Frontend :** Interface utilisateur en React, avec des pages pour :
+  - Dashboard
+  - Liste des utilisateurs
+  - Ajout d’un utilisateur
+  - Modification d’un utilisateur
 
-# Le projet est divisé en frontend et backend :
+- **Backend :** API RESTful construite avec Express qui manipule un fichier JSON (`users.json`) jouant le rôle de base de données.
 
-Frontend : pages React pour l’interface utilisateur et les formulaires
+---
 
-Backend : API RESTful Express pour gérer les utilisateurs avec un fichier JSON
+## 🚀 Installation & Lancement
 
-# Installation et lancement
+### 1️⃣ Backend
 
-# Backend
 cd backend
 npm install
 node server.js
-
 L’API sera accessible sur : http://localhost:5000
 
-# Frontend
+### 2️⃣ Frontend
+
 cd frontend
 npm install
 npm start
+L’application sera accessible sur :  http://localhost:3000
 
-L’application sera accessible sur : http://localhost:3000
-# Routes API :
+### 🌐 Routes API
 
-/users: GET	Liste des utilisateurs
-/users: POST  	Ajouter un utilisateur
-/users/:id: PUT	 Modifier un utilisateur
-/users/:id: DELETE	Supprimer un utilisateur
 
-# Structure :
-Test_Seomaniak_PrénomNom_2025/
-├─ backend/                # Dossier backend Node.js / Express
-│  ├─ users.json           # Fichier de stockage JSON des utilisateurs
-│  ├─ package.json         # Dépendances Node.js
-│  └─ server.js            # Fichier principal du serveur Express
+/users :	GET	Récupérer la liste des utilisateurs
+/users :	POST	Ajouter un nouvel utilisateur
+/users/:id :	PUT	Modifier un utilisateur existant
+/users/:id :	DELETE	Supprimer un utilisateur
+
+### 📂 Structure du projet
+
+test-seomaniak-dashboard/
+├─ backend/                 # Backend Node.js / Express
+│  ├─ users.json            # Fichier de stockage JSON des utilisateurs
+│  ├─ package.json          # Dépendances backend
+│  └─ server.js             # Serveur Express (API REST)
 │
-├─ frontend/               # Dossier frontend React
+├─ frontend/                # Frontend React
 │  ├─ public/
 │  │  └─ index.html
 │  ├─ src/
 │  │  ├─ components/
 │  │  │  ├─ UserCard.jsx
-│  │  │  ├─ UserForm.jsx
+│  │  │  ├─ Sidebar.jsx
+│  │  │  ├─ Footer.jsx
+│  │  │  ├─ Header.jsx
 │  │  │  └─ Logo.jsx
 │  │  ├─ pages/
+│  │  │  ├─ Dashboard.jsx
 │  │  │  ├─ Users.jsx
 │  │  │  ├─ AddUser.jsx
-│  │  │  ├─ EditUser.jsx
-│  │  │  └─ Dashboard.jsx
+│  │  │  └─ EditUser.jsx
 │  │  ├─ App.jsx
 │  │  ├─ index.jsx
 │  │  └─ styles.css
 │  ├─ package.json
 │  └─ README.md
 │
-├─ README.md        # Présentation globale du projet
+├─ README.md                # Présentation globale du projet
 └─ .gitignore
-
-
